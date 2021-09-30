@@ -6,53 +6,103 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css" />
     <script src='main.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <div class="container-fluid"> 
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand">Restaurant & Lounge</a>
-              <form class="d-flex">
-                <img src="./imagenes/carrito.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                <p id="numeroCarro">0 items</p> 
-              </form>
-            </div>
-          </nav>
+  <div class="container-fluid"> 
+    <div class="row" id="header">
+      <div class="col-10">
+        <h1 id="titulo_page">Restaurant & Lounge</h1>
+      </div>
+      <div class="col-2"> 
+        <img class="carro" src="./imagenes/carrito.png" alt="" width="50" height="50" >
+        <a><p class="carro" id="numeroCarro">0</p> items</a> 
+      </div>
     </div>
-    <div class="container-fluid">
-        <img src="./imagenes/imagen1.png" >
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            </ul>
-          </div>
-        </div>
+  </div>
+  <div class="container-fluid">
+      <img  id="banner" src="./imagenes/imagen1.png" alt="" >
+  </div>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        </ul>
+      </div>
     </nav>
-    <div class="card">
-        <div class="card-body" >
+
+    <div class="container-fluid" id="section_products">
+        <div  class="col-12 d-flex justify-content-center" id="category_title">
           <h1 id="category"></h1>
         </div>
+        <div class="row" id="products">
+        </div>
     </div>
-    <div></div>
-    <div class="container">
-        <div class="row" id="contenido">
-          <div class="col-3">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+    <div class="container-fluid">
+      <div id="compras">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center">
+            <h3>Order detail</h3>
+          </div>
+        </div>
+        <div class="row">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Description</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Modify</th>
+              </tr>
+            </thead>
+            <tbody id="body_compras"></tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between">
+            <div class="p-2">
+              <h4>Total: $<a id="total_compras">0.00</a></h4>
+            </div>
+            <div>
+              <button id="btn_cancel" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                cancel
+              </button>
+              <button class="btn btn-light" id="btn_confirm">
+                confirm
+              </button>
             </div>
           </div>
         </div>
+      </div> 
     </div>
-    
-    
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cancel the order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure about cancelling the order?
+        </div>
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btn-modal-cancel">Yes, I want to cancel the order</button>
+          <button  class="btn btn-light" type="button" id="btn-modal-continue" data-bs-dismiss="modal">No, I want to continue adding products</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <p>contact us: +57 3102105253 - info@restaurant.com - @restaurant</p>
+  </div>
 </body>
 </html>
+
