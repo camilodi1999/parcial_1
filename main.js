@@ -6,10 +6,7 @@ let total = 0;
 
 fetch(url).then(response => response.json())
   .then(data => {
-    data.forEach(element => {
-      menu[element.name] = element.products;
-    });
-
+  
     let navBar = document.getElementsByClassName("navbar-nav")[0];
     for( i= 0; i<data.length; i++) {
       let li = document.createElement("li");
@@ -23,6 +20,11 @@ fetch(url).then(response => response.json())
       li.appendChild(a);
       navBar.appendChild(li);
     }
+    
+    data.forEach(element => {
+      menu[element.name] = element.products;
+    });
+
     selectCategoria(data[0].name,data);
 
     let carro_img = document.querySelectorAll("img.carro")[0];

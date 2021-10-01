@@ -60,7 +60,11 @@ button{
     width: auto;
 }
 
-#btn-modal-continue{
+#btn_confirm{
+    background-color: #f3e9dd ;
+}
+
+#btn-modal-cancel{
     background-color: #f3e9dd ;
 }
 
